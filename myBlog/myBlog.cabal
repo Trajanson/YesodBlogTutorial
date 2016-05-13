@@ -23,6 +23,8 @@ library
                      Handler.Common
                      Handler.Home
                      Handler.Comment
+                     Handler.PostNew
+                     Handler.PostDetails
 
     if flag(dev) || flag(library-only)
         cpp-options:   -DDEVELOPMENT
@@ -84,6 +86,8 @@ library
                  , time
                  , case-insensitive
                  , wai
+                 , markdown
+                 , yesod-text-markdown
 
 executable         myBlog
     if flag(library-only)
@@ -101,6 +105,8 @@ test-suite test
     other-modules:     Handler.CommentSpec
                        Handler.CommonSpec
                        Handler.HomeSpec
+                       Handler.PostNew
+                       Handler.PostDetails
                        TestImport
     hs-source-dirs:    test
     ghc-options:       -Wall
